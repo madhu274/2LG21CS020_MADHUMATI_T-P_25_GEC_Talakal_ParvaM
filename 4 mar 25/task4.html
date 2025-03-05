@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Difference of Squares</title>
+</head>
+<body>
+    <div>
+        <label for="a">Value a:</label>
+        <input type="number" id="a" value="2">
+    </div>
+    <div>
+        <label for="b">Value b:</label>
+        <input type="number" id="b" value="1">
+    </div>
+    <button onclick="calculateDifferenceOfSquares()">Calculate</button>
+    <div id="output"></div>
+
+    <script>
+        function calculateDifferenceOfSquares() {
+            let a = parseInt(document.getElementById("a").value);
+            let b = parseInt(document.getElementById("b").value);
+
+            let leftHandSide = Math.pow(a, 2) - Math.pow(b, 2);
+            let rightHandSide = (a - b) * (a + b);
+
+            let outputDiv = document.getElementById("output");
+            outputDiv.innerHTML = `
+                <p>a<sup>2</sup> - b<sup>2</sup> = (a - b)(a + b)</p>
+                <p>${a}<sup>2</sup> - ${b}<sup>2</sup> = (${a} - ${b})(${a} + ${b})</p>
+                <p>${leftHandSide} = ${rightHandSide}</p>
+            `;
+        }
+    </script>
+</body>
+</html>
